@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define ll long long
+
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    ll t;
+    cin >> t;
+    while(t--){
+        ll a;
+        cin >> a;
+        ll d1 = 0;
+        ll d2 = 0;
+        ll i = 1;
+
+        ll profit = 0;
+        ll temp;
+        while(true){
+            temp = profit;
+            profit += (a - pow(2 , i-1));
+           
+           
+            // cout << profit << "\n";
+            if(profit > 0){
+                d1 += 1;   
+            }
+            if(profit > temp){
+                d2 += 1;
+            }
+            if(profit < 0){
+                break;
+            }
+           
+            i+= 1;
+            
+        }
+
+
+        cout << d1 <<" "<< d2 <<"\n";
+    }
+    return 0;
+}
